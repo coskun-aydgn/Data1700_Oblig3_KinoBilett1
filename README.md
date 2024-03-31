@@ -4,7 +4,7 @@ Oslomet brukernavn : coayd2324
 
 GitHub brukernavn : coskun-aydgn
 
-GitHub repo URL : https://github.com/coskun-aydgn/Oblig-1.git
+GitHub repo URL :https://github.com/coskun-aydgn/Data1700_Oblig3_KinoBilett.git
 
 Fullt navn : Coskun Aydogan
 
