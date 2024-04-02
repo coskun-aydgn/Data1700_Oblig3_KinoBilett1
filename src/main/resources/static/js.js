@@ -33,8 +33,18 @@ function validateogSubmit() {
         $("#feilMeldingemail").text('"Må skriv noe inn i email"');
         return;
     }
-    if ( antallBilleter.val() <= 0) {
+
+    if ( antall <= 0) {
         alert("Skriv gyldig tall for billetter.")
+        return;
+    }
+    const stringRgl=/^[a-zA-åÅøØæÆ]+$/;
+    if(!stringRgl.test(forNavn)){
+        alert("Skriv inn et gyldig fornavn.");
+        return;
+    }
+    if(!stringRgl.test(etterNavn)){
+        alert("Skriv inn et gyldig etternavn.");
         return;
     }
     const tlfnRgl = /^[0-9]{8}$/;
@@ -50,46 +60,7 @@ function validateogSubmit() {
         return;
     }
 
-    if (fornavn.val() === "") {
-        feilMelding = "Må skrives noe inn i fornavnet."
-        $("#manglerFornavn").html(feilMelding);
-        console.log("feil i fornavn");
-        allGood = false;
-    } else {
-        console.log("suksess for fornavn");
-        feilMelding = "";
-        $("#manglerFornavn").html(feilMelding);
-    }
-    if (etternavn.val() === "") {
-        feilMelding = "Må skrives noe inn i etternavn."
-        $("#manglerEtternavn").html(feilMelding);
-        console.log("feil for etternavn");
-        allGood = false;
-    } else {
-        console.log("suksess for etternavn");
-        feilMelding = ""
-        $("#manglerEtternavn").html(feilMelding);
-    }
-    if (telefon.val() === "") {
-        feilMelding = "Må skrives noe inn i telefon nummer."
-        $("#manglerTelefon").html (feilMelding);
-        console.log("feil for telefon nummer");
-        allGood = false;
-    } else {
-        console.log("suksess for telefon nummer");
-        feilMelding = "";
-        $("#manglerTelefon").html(feilMelding);
-    }
-    if (epost.val() === "") {
-        feilMelding = "Må skrive gyldig epost."
-        $("#manglerEpost").html(feilMelding);
-        console.log("feil for epost");
-        allGood = false;
-    } else {
-        console.log("suksess for epost");
-        feilMelding = "";
-        $("#manglerEpost").html(feilMelding);
-    }
+
     if (allGood) {
         const billett = {
             filmS: film.val(),
