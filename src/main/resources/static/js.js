@@ -1,15 +1,22 @@
-
+$.ready(function (){
+    getFilmer();
+});
 function getFilmer(){
-    $.get("/getFilm", function (filmer){
-        formaterFilmer(filmer);
+    $.get("/hentfilmer", function (filmer){
+        filmLister(filmer);
+        console.log(filmer);
     })
-    function formaterFilmer (filmer){
-        let ut = "<select id='film'>";
+
+    function filmLister (filmer){
+        let ut = "<select class=";
+        ut+= "'form-control'";
+        ut+="id=";
+        ut+="'filmSelect'>";
         for(const film of filmer){
-            ut+= "<option value='" + film + "'>" + film + "</option>";
+            ut+= "<option>" + film + "</option>";
         }
         ut+= "</select>";
-        $("#filmInn").html(ut);
+        $("#filmer").html(ut);
     }
 }
 function validateogSubmit() {
